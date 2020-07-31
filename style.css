@@ -7,7 +7,7 @@
   --primary-darken: #6f8639;
   --bg: #e0d9d9;
   --shadow: 2px 0 5px rgba(49, 49, 49, 0.5);
-  --corners: 0;
+  --corners: 5px;
   --text-color: #3a3838;
   --dark: #3a3838;
   --dark-lighten: #504c4c;
@@ -22,7 +22,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 header{
@@ -44,6 +44,7 @@ p{
 
 img{
   max-width: 100%;
+  max-height: 100%;
 }
 
 form{
@@ -52,7 +53,8 @@ form{
 
 label{
   display: block;
-  font-size: 12pt;
+  font-size: 16pt;
+  font-weight: bold;
 }
 
 input{
@@ -123,6 +125,12 @@ button.btn-special:hover{
   border-radius: var(--corners);
 }
 
+@media screen and(max-width: 700px){
+  .container{
+    width: 95%;
+  }
+}
+
 .shadow{
   filter: drop-shadow(var(--shadow));
 }
@@ -168,10 +176,27 @@ button.btn-special:hover{
 .btn-cancel{
   background-color: red;
   border-color: lightcoral;
+  word-wrap: normal;
+  border: none;
+  width: 105px;
+  box-shadow: var(--shadow);
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .btn-cancel:hover{
   background-color: #fa4141;
   border-color: #ff3737;
+}
+
+.btn-green{
+  background-color: green;
+  border-color: lightgreen;
+}
+.btn-green:hover{
+  background-color: #4a7c4a;
+  border-color:#98ee90;
 }
 
 .text-danger{

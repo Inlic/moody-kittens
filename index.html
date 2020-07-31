@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Moody Kittens | CodeWorks</title>
   <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,7 +16,7 @@
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class="" onsubmit="addKitten(event)">
       <div class="d-flex">
-        <input placeholder="Name" type="text" name="name" />
+        <input placeholder="Name" type="text" name="name" required />
         <button class="btn-special" type="submit">
           /ᐠ｡ꞈ｡ᐟ\
         </button>
@@ -28,20 +28,23 @@
       <div class="card p-2 text-center w-50">
         <img src="moody-logo.png" height="250" alt="Moody Kittens">
         <div class="mt-2">
-          <b class="text-center">Hello Student</b>
-          <p>This is your starter template only feel free to modify the look as you tackle the challenges that we have laid out.</p>
-          <small>Good Luck and Have Fun!</small>
+          <b class="text-center">Everyone Should Experience the Joy of Cat</b>
+          <p>Name Your Cat and Press Add in the Top Right, or Press Get Started to Begin Your Kitty Adventure!</p>
+          <small>You have Cat to be Kitten me.</small>
           <br>
           <button onclick="getStarted()">Get Started</button>
+          <br>
+          <button id="purge" class="btn-cancel hidden" onclick="purgeKittens()">Purge kittens.</button>
         </div>
       </div>
     </div>
     <div class="p-2">
       <div id="kittens" class="d-flex align-items-center flex-wrap">
+        
       </div>
   </main>
   <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
-    <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
+    <small>Created with <span style="color: var(--primary)">&hearts;</span> by Codeworks adjusted by Inlic</small>
   </footer>
 
   <script src="app.js"></script>
