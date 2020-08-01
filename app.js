@@ -55,7 +55,8 @@ function saveKittens() {
  */
 function loadKittens() {
   let kittensData = JSON.parse(window.localStorage.getItem("kittens"))
-  if(kittensData){
+  console.log(kittensData)
+  if(kittensData && kittensData.length !== 0){
     kittens = kittensData
     document.getElementById("purge").classList.remove("hidden");
   };
@@ -68,28 +69,31 @@ function drawKittens() {
   let template ="";
   kittens.forEach(kitten =>{
     template+=`
-    <div class="card shadow bg-dark m-2 container">
+    <div class="card d-flex flex-wrap shadow bg-dark m-2 container">
       <div id =${kitten.id} class ="container d-flex justify-content-center kitten ${kitten.mood}">  
         <img src="https://robohash.org/${kitten.name}.png?set=set4">
       </div>
-      <div class = "text-danger ${kitten.affection > 0 ? 'hidden': ''}">Woe to you mortal!  Doom has come to your kitten, ${kitten.name}!</div>
-      <div class = "d-flex ${kitten.affection === 0 ? 'hidden' : ''}">
-        <div class="container d-flex space-around">
-          <label class="text-light" for="name">Name:</label>
-          <h5 id="${kitten.id}-name" class="text-light " name="name">${kitten.name}</h5>
-          
-          <label class="text-light" for="mood">Mood:</label>
-          <h5 id="${kitten.id}-mood" class="text-light" name="mood">${kitten.mood}</h5>
-          
-          <label class="text-light" for="affection">Affection:</label>
-          <h5 id="${kitten.id}-affection" class="text-light" name="affection">${kitten.affection}</h5>
-          
-        </div>
-        <br>
-        <div class="container d-flex space-around">
-          <button class="btn-cancel" onclick="pet('${kitten.id}')">Pet</button>
-          <button class="button btn-green" onclick="catnip('${kitten.id}')">Catnip</button>
-        </div>
+      <div class = "text-danger text-center ${kitten.affection > 0 ? 'hidden': ''}">Woe to you mortal!  Doom has come to your kitten, ${kitten.name}!
+      </div>
+      <div class = "d-flex flex-wrap ${kitten.affection === 0 ? 'hidden' : ''}">
+        <ul>
+        <li class="container m-2 d-flex">
+          <label class="text-light m-1" for="name">Name:</label>
+          <p id="${kitten.id}-name" class="text-light " name="name">${kitten.name}</p>
+        </li>
+        <li class="container m-2 d-flex">  
+          <label class="text-light m-1" for="mood">Mood:</label>
+          <p id="${kitten.id}-mood" class="text-light" name="mood">${kitten.mood}</p>
+        </li>
+        <li class="container m-2 d-flex">  
+          <label class="text-light m-1" for="affection">Affection:</label>
+          <p id="${kitten.id}-affection" class="text-light" name="affection">${kitten.affection}</p>
+        </li>
+        <li class="container d-flex space-between">
+          <button class="pet btn-cancel m-1" onclick="pet('${kitten.id}')">Pet</button>
+          <button class="button btn-green m-1" onclick="catnip('${kitten.id}')">Catnip</button>
+        </li>
+        </ul>
       </div> 
     </div>
     `
@@ -202,4 +206,6 @@ function generateId() {
 }
 
 loadKittens();
+let lengthOfKittens = kittens.length
+document.getElementById('purge').innerHTML = "Purge "+lengthOfKittens+" kittens."
 

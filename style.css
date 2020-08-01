@@ -139,6 +139,8 @@ button.btn-special:hover{
 .kitten img{
   filter: drop-shadow(2px 4px 6px #1b1b1b);
   transition: all .35s ease;
+  max-height: 75%;
+  max-width: 75%;
 }
 .kitten.happy img{
   filter: drop-shadow(2px 4px 6px #00ffb3);
@@ -154,7 +156,11 @@ button.btn-special:hover{
 }
 .kitten.gone{
   color: var(--danger);
-  pointer-events: none;
+  pointer-events: inherit;
+}
+
+.pet.btn-cancel {
+  width: 60px;
 }
 
 .bg-dark{
@@ -178,7 +184,7 @@ button.btn-special:hover{
   border-color: lightcoral;
   word-wrap: normal;
   border: none;
-  width: 105px;
+  width: 108px;
   box-shadow: var(--shadow);
   position: relative;
   align-items: center;
