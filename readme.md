@@ -11,15 +11,14 @@ In this application you will build out a fun application that allows users the j
 ### The Setup
 The basic design and layout for this app has been mocked out and the names of the JavaScript functions have all been created. As the developer you will need to work across HTML, CSS and JavaScript to complete the requirements. In the code you will see several comments intended to be used as help and guidelines on what needs to be accomplished. Once you have achieved the requirements of the app use GitHub to host the page live.
 
-### Requirements
+### Requirements/Functionality
 
 #### Visualization
 - Users must have a form where they enter in at minimum the name of a kitten
 - A Kitten's name and mood must be visible for the user 
 - A custom Google Font must be added
 - Kittens are visible when the page reloads
-- A Kitten's mood must affect visually the apperance of the kitten
-
+- A Kitten's mood must affect visually the appearance of the kitten
 
 #### Functionality 
 - Add Kitten form clears when submitted
@@ -29,7 +28,9 @@ The basic design and layout for this app has been mocked out and the names of th
 - Kittens have at least two buttons that affect the kitten's mood in different ways
 - Kitten's moods persist through page reloads
 
-### Step by Step Guide
+
+## Codeworks Framework ##
+### Step by Step Guide ###
 
 1. Create a form used to add a Kitten
 1. Handle the form submission
